@@ -1,0 +1,4 @@
+rootProject.name = 'filament-java'
+include ':android'
+include ':desktop'
+include ':framework'
