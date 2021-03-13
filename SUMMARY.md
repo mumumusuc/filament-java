@@ -18,11 +18,15 @@
 
 * [Untitled](san-.-cai-zhi/untitled.md)
 
-## 四. 光照
+## 四. 纹理
+
+* [Untitled](si-.-wen-li/untitled.md)
+
+## 五. 光照 <a id="si-.-guang-zhao"></a>
 
 * [Untitled](si-.-guang-zhao/untitled.md)
 
-## 五. 着色器 <a id="wu-.-zhe-se-qi"></a>
+## 六. 着色器 <a id="wu-.-zhe-se-qi"></a>
 
 * [Untitled](wu-.-zhe-se-qi/untitled.md)
 
