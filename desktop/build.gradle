@@ -5,5 +5,16 @@ plugins {
 
 dependencies {
     implementation fileTree(dir: libs, includes: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+}
+
+task run(dependsOn: classes, type: JavaExec) {
+    def name = 'java.library.path'
+    def prop = System.getProperty(name)
+    main = 'com.mumumusuc.filament.desktop.DesktopLauncher'
+    workingDir = assets
+    classpath = sourceSets.main.runtimeClasspath
+    systemProperty name, "$prop:$libs"
+    standardInput = System.in
+    //ignoreExitValue = true
 }

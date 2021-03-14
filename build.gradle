@@ -1,5 +1,3 @@
-import org.codehaus.groovy.runtime.GStringImpl
-
 buildscript {
     ext {
         kotlin_version = '1.4.31'
@@ -18,13 +16,17 @@ buildscript {
     }
 }
 
+def root = rootProject.projectDir.path
+
+ext{
+    ndk = '22.0.7026061'
+    libs = "${root}/libs".toString()
+    assets = "${root}/android/src/main/assets".toString()
+}
+
 allprojects {
     group 'com.mumumusuc'
     version '0.0.1'
-
-    ext {
-        libs = "${projectDir.path}/libs".toString()
-    }
 
     repositories {
         mavenLocal()
