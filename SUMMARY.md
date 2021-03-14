@@ -6,9 +6,8 @@
 ## 一. 基本概念 <a id="gou-jian-xiang-mu"></a>
 
 * [1.1 构建项目](gou-jian-xiang-mu/1.1-gou-jian-xiang-mu.md)
-* [1.2 Hello World - JVM](gou-jian-xiang-mu/1.2-hello-world-jvm.md)
-* [1.3 Hello World - Android](gou-jian-xiang-mu/1.3-hello-world-android.md)
-* [1.4 理解项目](gou-jian-xiang-mu/1.4-li-jie-xiang-mu.md)
+* [1.2 Hello World](gou-jian-xiang-mu/1.2-hello-world.md)
+* [1.3 理解项目](gou-jian-xiang-mu/1.3-li-jie-xiang-mu.md)
 
 ## 二. 模型
 
