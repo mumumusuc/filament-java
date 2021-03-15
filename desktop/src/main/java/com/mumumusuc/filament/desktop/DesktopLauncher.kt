@@ -3,8 +3,6 @@ package com.mumumusuc.filament.desktop
 import com.mumumusuc.filament.sample.HelloWorld
 import java.awt.Canvas
 import java.awt.Dimension
-import java.awt.event.ComponentAdapter
-import java.awt.event.ComponentEvent
 import java.awt.event.WindowAdapter
 import java.awt.event.WindowEvent
 import javax.swing.JFrame
@@ -15,11 +13,6 @@ private const val kWindowHeight = 400
 class DesktopLauncher {
     private var mQuit = false
     private val mCanvas: Canvas = Canvas().apply {
-        addComponentListener(object : ComponentAdapter() {
-            override fun componentResized(e: ComponentEvent) {
-                // TODO
-            }
-        })
         preferredSize = Dimension(kWindowWidth, kWindowHeight)
         isVisible = true
     }
@@ -32,11 +25,11 @@ class DesktopLauncher {
                 }
             })
             defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-            setLocationRelativeTo(null)
             add(mCanvas)
             pack()
             isResizable = false
             isVisible = true
+            setLocationRelativeTo(null)
         }
     }
 
