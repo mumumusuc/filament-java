@@ -1,15 +1,20 @@
 package com.mumumusuc.filament.desktop
 
+import com.mumumusuc.filament.sample.HelloWorld
+
 class DesktopLauncher {
     companion object {
         @JvmStatic
-        @Suppress("unused")
         fun main(args: Array<String>) {
-            println("hello world")
+            HelloWorld().run {
+                onCreate()
+                onRender()
+                onDestroy()
+            }
         }
 
         init {
-            System.loadLibrary("awt")
+            System.loadLibrary("jawt")
             System.loadLibrary("filament-jni")
         }
     }
