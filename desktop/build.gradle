@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation fileTree(dir: libs, includes: ['*.jar'])
+    implementation project(':sample')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib'
 }
 
