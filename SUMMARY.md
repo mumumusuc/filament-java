@@ -11,7 +11,8 @@
 
 ## 二. 模型
 
-* [Untitled](er-.-mo-xing/untitled.md)
+* [2.1 构建模型](er-.-mo-xing/untitled.md)
+* [2.2 导入模型](er-.-mo-xing/2.2-dao-ru-mo-xing.md)
 
 ## 三. 材质
 
