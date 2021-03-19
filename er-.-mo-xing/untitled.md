@@ -5,6 +5,7 @@
 ```kotlin
 // 创建实体
 val entity = EntityManager.get().create()
+// 创建1个Renderable
 RenderableManager.Builder(1)
     // 设定包围盒
     .boundingBox(box)
@@ -23,33 +24,50 @@ RenderableManager.Builder(1)
 首先创建顶点数据缓存，容量=4\(Float字节\)×3\(顶点xyz\)×4\(顶点数\)，并从第三像限顺时针放入了4组顶点坐标，最后将Buffer位置重置到起点。
 
 ```kotlin
+/**
+*           |
+*    P1     |     P2
+*           |
+*           |   
+*-----------|----------＞ X
+*           |
+*           |
+*    P0     |     P3
+*           |
+*           ∨
+*           Z
+*/
 private val mVertexData: Buffer =
         ByteBuffer.allocateDirect(4 * 3 * 4).order(ByteOrder.nativeOrder()).apply {
             asFloatBuffer().put(
                 floatArrayOf(
-                    -1f, 0f, -1f,
-                    -1f, 0f, +1f,
-                    +1f, 0f, +1f,
-                    +1f, 0f, -1f,
+                    -1f, 0f, -1f, // P0
+                    -1f, 0f, +1f, // P1
+                    +1f, 0f, +1f, // P2
+                    +1f, 0f, -1f, // P3
                 )
             )
         }.rewind()
 ```
 
-接下来继续创建法线数据缓存，在**Filament**中并不是接受简单的`Float3`法线数据，而是由切线-副切线-法线组成的四元数。好在`MathUtils`中提供了`packTangentFrame`来打包四元数。在本例X-Z平面中，\[1,0,0\]就是切线\(+X\)，\[0,0,1\]就是副切线\(+Z\)，而法线则是+Y的\[0,1,0\]。由于平面的4个定点法线完全一致，这里向Buffer中放入4次计算出的四元数即可。
+接下来继续创建法线数据缓存，在**Filament**中并不是接受简单的`Float3`法线数据，而是由**切线-副切线-法线**组成的**四元数**。好在`MathUtils`中提供了`packTangentFrame`来打包四元数。在本例X-Z平面中，\[1,0,0\]是切线\(+X\)，\[0,0,1\]是副切线\(+Z\)，而法线是+Y的\[0,1,0\]。因为平面的4个顶点法线完全一致，这里向Buffer中放入4次计算出的四元数即可。
 
 ```kotlin
 val tangents = FloatArray(4).apply {
             MathUtils.packTangentFrame(
-                1f, 0f, 0f,
-                0f, 0f, 1f,
-                0f, 1f, 0f,
+                1f, 0f, 0f,    // 切线tangent
+                0f, 0f, 1f,    // 副切线bitangent
+                0f, 1f, 0f,    // 法线normal
                 this
             )
         }
 private val mTangentData: Buffer = 
         ByteBuffer.allocateDirect(4 * 4 * 4).order(ByteOrder.nativeOrder()).apply {
-            asFloatBuffer().put(tangents).put(tangents).put(tangents).put(tangents)
+            asFloatBuffer()
+            .put(tangents) // tP0
+            .put(tangents) // tP1
+            .put(tangents) // tP2
+            .put(tangents) // tP3
         }.rewind()
 ```
 
@@ -73,7 +91,6 @@ vertexBuffer.setBufferAt(engine, 1, mTangentData)
 首先创建索引数据缓存，容量=2\(Short字节\)×6\(索引数\)
 
 ```kotlin
-
 /**
 *   ----------＞X
 *   | 1--2  2
@@ -101,9 +118,9 @@ indexBuffer.setBuffer(engine, mIndexData)
 
 至此索引缓存`IndexBuffer`构建完成。
 
-### 2.1.3 创建可渲染实体
+### 2.1.3 创建实体 Entity
 
-回到开篇的内容，我们要用`RenderableManager`创建可渲染实体。首先创建包围盒中心在\[0,0,0\]，半大小为\[1,0.0001,1\]，最后将上文所创建的`VertexBuffer`和`IndexBuffer`和`BoundingBox`设置给`RenderableManager`，图元类型为三角形\(`TRIANGLES`\)，从索引位置0开始绘制6个索引指定的定点数据。
+回到开篇的内容，我们要用`RenderableManager`创建并绑定到实体。首先创建包围盒中心在\[0,0,0\]，半大小为\[1,0.0001,1\]，最后将上文所创建的`VertexBuffer`和`IndexBuffer`和`BoundingBox`设置给`RenderableManager`，图元类型为三角形`TRIANGLES`，从索引位置0开始绘制6个索引指定的定点数据。
 
 ```text
 val box = Box(0f, 0f, 0f, 1f, 1E-4f, 1f)
@@ -179,7 +196,7 @@ private object FilaPlane : FilaPrefab {
         }.rewind()
     }
     private val mIndexData: Buffer by lazy {
-        ByteBuffer.allocateDirect(6 * Short.SIZE_BYTES).order(ByteOrder.nativeOrder()).apply {
+        ByteBuffer.allocateDirect(2 * 6).order(ByteOrder.nativeOrder()).apply {
             asShortBuffer().put(shortArrayOf(0, 1, 2, 2, 3, 0))
         }
     }
