@@ -37,7 +37,11 @@
 * [5.3 天空盒与IBL](si-.-guang-zhao/5.3-tian-kong-he-yu-ibl.md)
 * [5.4 理解项目](si-.-guang-zhao/5.4-li-jie-xiang-mu.md)
 
-## 六. 着色器 <a id="wu-.-zhe-se-qi"></a>
+## 六. 后期特效 <a id="wu-.-zhe-se-qi"></a>
 
-* [Untitled](wu-.-zhe-se-qi/untitled.md)
+* [5.？ 炫光Bloom](wu-.-zhe-se-qi/untitled.md)
+
+## 七. 着色器 <a id="qi-.-zhe-se-qi"></a>
+
+* [Untitled](qi-.-zhe-se-qi/untitled.md)
 
