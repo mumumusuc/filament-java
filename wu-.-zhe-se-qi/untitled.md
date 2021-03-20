@@ -12,33 +12,19 @@ _Filament_提供的`BloomOptions`如下属性:
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">
+      <th style="text-align:center">
         <p>
           <img src="../.gitbook/assets/bloom_strength_0.png" alt/>
         </p>
         <p><em><code>strength = 0f</code></em>
         </p>
       </th>
-      <th style="text-align:left">
-        <img src="../.gitbook/assets/bloom_strength_1.png" alt/> <em><code>strength = 1f</code></em>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
+      <th style="text-align:center">
         <p>
-          <img src="../.gitbook/assets/bloom_strength_0.png" alt/>
+          <img src="../.gitbook/assets/bloom_strength_1.png" alt/>
         </p>
-        <p><em><code>strength = 0f</code></em>
+        <p><em><code>strength = 1f</code></em>
         </p>
-      </th>
-      <th style="text-align:left">
-        <img src="../.gitbook/assets/bloom_strength_1.png" alt/> <em><code>strength = 1f</code></em>
       </th>
     </tr>
   </thead>
@@ -46,20 +32,11 @@ _Filament_提供的`BloomOptions`如下属性:
 </table>
 
 * **`blendMode`**: 炫光的合成方式，叠加或者混合。
-* **`anamorphism`**: 炫光的长宽比\(x/y\), 用来实现一些艺术效果。
-* **`threshold`**: 开启后，只有原图阈值高于1.0的部分才会进行炫光处理。可以用来实现一些艺术效果，或者搭配尘迹贴图dirt texture一同使用。
-* **`dirt`**: 灰尘/划痕/污渍贴图，当炫光发生时会在屏幕上进行绘制，只有在`threshold=true`时才能正常工作。
-* **`dirtStrength`**: 尘迹贴图的强度。
 
- ![](https://gblobscdn.gitbook.com/assets%2F-MVdvGpwRrUmuwh7DrUb%2F-MWFJj3VeWJRtTewF37-%2F-MWFKWZ95U0tPzcFdx5-%2Fbloom_strength_0.png?alt=media&token=727d0414-a5a2-4fcf-8c28-fe8693a6fa31) ![](https://gblobscdn.gitbook.com/assets%2F-MVdvGpwRrUmuwh7DrUb%2F-MWFJj3VeWJRtTewF37-%2F-MWFKtKrYl2Zs1rhsjzc%2Fbloom_strength_1.png?alt=media&token=f7ae2294-58e9-4445-86a8-884a207b4a5e)
+| TODO:image,ADD | TODO:image,MIX |
+| :---: | :---: |
 
-> TODO: images
 
-* **`blendMode`**: 炫光的合成方式，叠加或者混合。
-* **`anamorphism`**: 炫光的长宽比\(x/y\), 用来实现一些艺术效果。
-* **`threshold`**: 开启后，只有原图阈值高于1.0的部分才会进行炫光处理。可以用来实现一些艺术效果，或者搭配尘迹贴图dirt texture一同使用。
-* **`dirt`**: 灰尘/划痕/污渍贴图，当炫光发生时会在屏幕上进行绘制，只有在`threshold=true`时才能正常工作。
-* **`dirtStrength`**: 尘迹贴图的强度。
 * **`anamorphism`**: 炫光的长宽比\(x/y\), 用来实现一些艺术效果。
 
 | ![](../.gitbook/assets/bloom_anamorphism_0.1.png)_`anamorphism = 0.1f`_  | ![](../.gitbook/assets/bloom_anamorphism_32.0.png)_`anamorphism = 32f`_  |
@@ -90,7 +67,7 @@ _Filament_提供的`BloomOptions`如下属性:
   <tbody></tbody>
 </table>
 
-* **`dirt`**: 灰尘/划痕/污渍贴图，当炫光发生时会在屏幕上进行绘制，只有在`threshold=true`时才能正常工作。
+* **`dirt`**: 灰尘/划痕/污渍贴图，当炫光发生时会在屏幕上进行绘制，与`threshold=true`配合使用。
 * **`dirtStrength`**: 尘迹贴图的强度。
 
 <table>
