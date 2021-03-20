@@ -27,7 +27,7 @@ _Filament_提供的`BloomOptions`如下属性:
   <tbody></tbody>
 </table>
 
-| ![strength=0f](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-MVdvGpwRrUmuwh7DrUb%2F-MWFJj3VeWJRtTewF37-%2F-MWFKWZ95U0tPzcFdx5-%2Fbloom_strength_0.png?alt=media&token=727d0414-a5a2-4fcf-8c28-fe8693a6fa31) | ![strength=1f](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-MVdvGpwRrUmuwh7DrUb%2F-MWFJj3VeWJRtTewF37-%2F-MWFKtKrYl2Zs1rhsjzc%2Fbloom_strength_1.png?alt=media&token=f7ae2294-58e9-4445-86a8-884a207b4a5e) |
+| ![strength=0f](https://gblobscdn.gitbook.com/assets%2F-MVdvGpwRrUmuwh7DrUb%2F-MWFJj3VeWJRtTewF37-%2F-MWFKWZ95U0tPzcFdx5-%2Fbloom_strength_0.png?alt=media&token=727d0414-a5a2-4fcf-8c28-fe8693a6fa31) | ![strength=1f](https://gblobscdn.gitbook.com/assets%2F-MVdvGpwRrUmuwh7DrUb%2F-MWFJj3VeWJRtTewF37-%2F-MWFKtKrYl2Zs1rhsjzc%2Fbloom_strength_1.png?alt=media&token=f7ae2294-58e9-4445-86a8-884a207b4a5e) |
 |:-|:-|
 
 
