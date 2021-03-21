@@ -28,11 +28,31 @@ _Filament_提供的`BloomOptions`如下属性:
   <tbody></tbody>
 </table>
 
-* **`blendMode`**: 炫光的合成方式，叠加或者混合。
+* **`blendingMode`**: 炫光的合成方式，叠加`BlendingMode.ADD`或者混合`BlendingMode.INTERPOLATE`。默认值为`ADD`，`INTERPOLATE`在观感上会比`ADD`稍暗。
+* **`highlight`**: 高光钳制，最小值10，最大值+inf。在处理炫光前，将高光值限制到此值。
 
-| TODO:image,ADD | TODO:image,MIX |
-| :---: | :---: |
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">
+        <p>
+          <img src="../.gitbook/assets/bloom_anamorphism_32_highlight_10.png" alt/>
+        </p>
+        <p><em><code>highlight = 10f</code></em>
+        </p>
+      </th>
+      <th style="text-align:center">
+        <p>
+          <img src="../.gitbook/assets/bloom_anamorphism_32_highlight_2000.png"
+          alt/>
+        </p>
+        <p><em><code>highlight = 2000f</code></em>
+        </p>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
 * **`anamorphism`**: 炫光的长宽比\(x/y\), 用来实现一些艺术效果。
 
