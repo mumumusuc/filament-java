@@ -13,7 +13,8 @@
 
 * [2.1 构建模型](er-.-mo-xing/2.1-gou-jian-mo-xing.md)
 * [2.2 导入模型](er-.-mo-xing/2.2-dao-ru-mo-xing.md)
-* [2.3 理解项目](er-.-mo-xing/2.3-li-jie-xiang-mu.md)
+* [2.3 坐标变换](er-.-mo-xing/2.3-zuo-biao-bian-huan.md)
+* [2.4 理解项目](er-.-mo-xing/2.3-li-jie-xiang-mu.md)
 
 ## 三. 材质
 
